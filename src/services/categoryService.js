@@ -8,7 +8,7 @@ async function getAllCategories() {
 
 async function getCategoryById(id) {
   const [rows] = await pool.query('SELECT * FROM categories WHERE id = ?', [id]);
-  if (!rows.length) throw new AppError('Category not found', 404);
+  if (!rows.length) throw new AppError('Category not allowd', 404);
   return rows[0];
 }
 
